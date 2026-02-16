@@ -13,7 +13,7 @@ public class Stack<T> {
      * Default constructor that creates a stack
      * with a capacity of 10 elements.
      */
-    public Stack() {
+    public Stack(){
         this.elements = new Object[10];
         this.top = -1;
     }
@@ -22,7 +22,7 @@ public class Stack<T> {
      * Constructor that creates a stack with a given array.
      * @param elements the array used to store stack elements
      */
-    public Stack(Object[] elements) {
+    public Stack(Object[] elements){
         this.elements = elements;
         this.top = -1;
     }
@@ -32,7 +32,7 @@ public class Stack<T> {
      * @param value the element to be pushed
      * @throws StackFullException if the stack is full
      */
-    public void push(T value) throws StackFullException {
+    public void push(T value)throws StackFullException{
         if (top == elements.length - 1) {
             throw new StackFullException("Stack is full.");
         }
@@ -44,8 +44,7 @@ public class Stack<T> {
      * @return the top element
      * @throws StackEmptyException if the stack is empty
      */
-    @SuppressWarnings("unchecked")
-    public T pop() throws StackEmptyException {
+    public T pop()throws StackEmptyException{
         if (top == -1) {
             throw new StackEmptyException("Stack is empty.");
         }
@@ -57,8 +56,7 @@ public class Stack<T> {
      * @return the top element
      * @throws StackEmptyException if the stack is empty
      */
-    @SuppressWarnings("unchecked")
-    public T peek() throws StackEmptyException {
+    public T peek()throws StackEmptyException{
         if (top == -1) {
             throw new StackEmptyException("Stack is empty.");
         }
@@ -69,7 +67,7 @@ public class Stack<T> {
      * Returns a string containing all elements of the stack separated by a semicolon.
      * @return a string representation of the stack
      */
-    public String list() {
+    public String list(){
         StringBuilder result = new StringBuilder();
         for (int i = 0; i <= top; i++) {
             result.append(elements[i]);
